@@ -28,7 +28,7 @@ If you require to generate landmarks, with "generate_new_landmarks" set to True,
 
 If you have your own keypoint data, the .txt files should be located and named in the exact same way as the image files, appended with '_landmarks.txt' (e.g. image name is '0001.png', keypoint file name should be '0001_landmarks.txt'.
 
-The code will extract(x, y) coordinates from the two column .txt file for each image, with the first column containing x coordinates and second column containing y coordinates. 
+The code will extract (x, y) coordinates from the two column .txt file for each image, with the first column containing x coordinates and second column containing y coordinates. 
 
 If you have the keypoints structured in a different manner, you can adapt the small section which reads the landmarks as it suits you.
 
@@ -39,4 +39,4 @@ The code and models allows the user two capabilities:
 1) Train a network from scratch (using either BP4D-Spontaneous or OF-labeled dataset of your own)
 2) Use pretrained models for inference and evaluation
 
-The pretrained weights for our experiment are 'cp.ckpt', available in each of exp1, exp2, and exp3. These folders are named identically to the naming convention found in the paper.
+The pretrained weights for our experiment are 'cp.ckpt', available in each of exp1, exp2, and exp3. These folders are named identically to the naming convention found in the paper. The directories can be downloaded directory from https://drive.google.com/drive/folders/1CiLTiazhmwQAZ9soxijAvJnXJ5ucZotK?usp=sharing 
