@@ -848,7 +848,6 @@ def get_next_image(shuffled_list, image_list):
             image_list_2.append(image_list[next_index - 1])
             shuffled_list[i] = image_list[next_index - 2]
     return shuffled_list, image_list_2
-img_formats = ['jpg', 'jpeg', 'png','bmp', 'jp2', 'webp', 'pbm', 'pgm', 'ppm', 'pxm', 'tiff', 'tif', 'hdr', 'pic']
 
 def data_gen_upsample(img_folder, Resize_info, batch_size):
     """
@@ -938,15 +937,6 @@ def mkdir_p(mypath):
             pass
         else: raise
 
-def create_sub_dict():
-    sub_lists = []
-    dict_nums = ['F001', 'F002', 'F004', 'F005', 'M001', 'M002', 'M003', 'M004', 'F003', 'F006', 'F007','F008','F009', 'F010', 'F011', 'F012', 'F013', 'F014', 'F015', 'F016', 'F017', 'F018', 'F019', 'F020', 'F021', 'F022', 'F023', 'M005', 'M006', 'M007', 'M008', 'M009', 'M010', 'M011', 'M012', 'M013', 'M014', 'M015', 'M016', 'M017', 'M018']
-    for i in range(len(dict_nums)):
-        sub_lists.append("S" + str(i))
-    keys = zip(sub_lists, dict_nums)
-    subject_dicts = dict(keys)
-    return subject_dicts
-
 def read_csv_data(csv_files):
     float_data = []
     string_data = []
@@ -960,6 +950,7 @@ def read_csv_data(csv_files):
                 for elements in data:
                     float_data.append(float(elements))
     return string_data, float_data
+
 def get_csv_landmarks(string_data, float_data, eye_num):
     x_lm = np.zeros(eye_num + 1 + 68)
     y_lm = np.zeros(eye_num + 1 + 68)
@@ -1112,6 +1103,9 @@ def get_weights(modelname, high_frac, F_flow, weight_lambdas):
     return weights, flow_weights
 
 if __name__ == '__main__':
+    # If your image data has an extension not in the 'img_formats' list, add the extension to it
+    img_formats = ['jpg', 'jpeg', 'png','bmp', 'jp2', 'webp', 'pbm', 'pgm', 'ppm', 'pxm', 'tiff', 'tif', 'hdr', 'pic']
+
     # FOR THE USER TO MODIFY
     repo_path = os.getcwd()
     results_path = repo_path + '/OFCNN_evaluation/' # name and location of path to store the results in
